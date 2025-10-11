@@ -25,10 +25,13 @@ export const AppContextProvider = (props) => {
     // Fetch All Courses
     const fetchAllCourses = async () => {
 
+        console.log("Attempting to fetch courses from:", backendUrl + '/api/course/all');
+
         try {
 
             const { data } = await axios.get(backendUrl + '/api/course/all');
 
+            console.log("API Response Received:", data);
             if (data.success) {
                 setAllCourses(data.courses)
             } else {
@@ -36,6 +39,7 @@ export const AppContextProvider = (props) => {
             }
 
         } catch (error) {
+            console.error("CRITICAL ERROR fetching courses:", error);
             toast.error(error.message)
         }
 
