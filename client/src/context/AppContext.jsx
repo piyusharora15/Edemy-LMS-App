@@ -139,7 +139,7 @@ export const AppContextProvider = (props) => {
 
 
     useEffect(() => {
-        fetchAllCourses()
+        // fetchAllCourses()
     }, [])
 
     // Fetch User's Data if User is Logged In
