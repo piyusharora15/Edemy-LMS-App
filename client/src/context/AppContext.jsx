@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useAuth, useUser } from "@clerk/clerk-react";
 import humanizeDuration from "humanize-duration";
+import { dummyCourses } from "../assets/assets";
 
 export const AppContext = createContext()
 
@@ -18,7 +19,7 @@ export const AppContextProvider = (props) => {
 
     const [showLogin, setShowLogin] = useState(false)
     const [isEducator,setIsEducator] = useState(false)
-    const [allCourses, setAllCourses] = useState([])
+    const [allCourses, setAllCourses] = useState(dummyCourses)
     const [userData, setUserData] = useState(null)
     const [enrolledCourses, setEnrolledCourses] = useState([])
 
